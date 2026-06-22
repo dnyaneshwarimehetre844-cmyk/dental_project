@@ -62,7 +62,7 @@ router.get("/Pricing", async (req, res) => {
 });
 router.get("/DentalSolutions", async (req, res) => {
   // res.send("Welcome Website Panal");
-  var sql = "select * from dentalSolutions";
+  var sql = "select * from dentalsolutions";
   var data = await query1(sql);
   // res.send("Welcome Website Panal");
 
