@@ -48,7 +48,7 @@ router.get("/index", (req, res) => {
   res.render("admin/index.ejs", { aname: name });
 });
 router.get("/DentalSolutions", async (req, res) => {
-  var sql = "select * from dentalSolutions";
+  var sql = "select * from dentalsolutions";
   var data = await query1(sql);
   // res.send("Welcome Website Panal");
   res.render("admin/DentalSolutions.ejs", { data: data });
@@ -56,20 +56,20 @@ router.get("/DentalSolutions", async (req, res) => {
 router.post("/DentalSolutions_save", async (req, res) => {
   // res.send(req.body);
   var { title, desc } = req.body;
-  var sql = "insert into dentalSolutions(title,description) values(?,?)";
+  var sql = "insert into dentalsolutions(title,description) values(?,?)";
   var data = await query1(sql, [title, desc]);
   // res.send(data);
   res.redirect("/admin/DentalSolutions");
 });
 router.get("/DentalSolutions_delete/:id", async (req, res) => {
   var id = req.params.id;
-  var sql = "delete from dentalSolutions where ds_id=?";
+  var sql = "delete from dentalsolutions where ds_id=?";
   var data = await query1(sql, [id]);
   res.redirect("/admin/DentalSolutions");
 });
 router.get("/DentalSolutions_edit/:id", async (req, res) => {
   var id = req.params.id;
-  var sql = "select * from dentalSolutions where ds_id=?";
+  var sql = "select * from dentalsolutions where ds_id=?";
   var data = await query1(sql, [id]);
   res.render("admin/DentalSolutions_edit.ejs", { data: data[0] });
 });
@@ -77,14 +77,14 @@ router.post("/DentalSolutions_edit_save/:id", async (req, res) => {
   // res.send(req.body);
   var id = req.params.id;
   var { title, desc } = req.body;
-  var sql = "update dentalSolutions set title=?,description=? where ds_id=?";
+  var sql = "update dentalsolutions set title=?,description=? where ds_id=?";
   var data = await query1(sql, [title, desc, id]);
   res.redirect("/admin/DentalSolutions");
 });
 router.get("/Blog", async (req, res) => {
   var sql = "select * from blog";
   var data = await query1(sql);
-  res.render("admin/Blog.ejs", { data: data });
+  res.render("admin/blog.ejs", { data: data });
 });
 router.post("/Blog_save", async (req, res) => {
   var { bdate, btitle, bdesc } = req.body;
@@ -108,7 +108,7 @@ router.get("/Blog_edit/:id", async (req, res) => {
   var id = req.params.id;
   var sql = "select * from blog where bid=?";
   var data = await query1(sql, [id]);
-  res.render("admin/Blog_edit.ejs", { data: data[0] });
+  res.render("admin/blog_edit.ejs", { data: data[0] });
 });
 router.post("/Blog_edit_save/:id/:img", async (req, res) => {
   var id = req.params.id;
