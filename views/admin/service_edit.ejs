@@ -1,0 +1,39 @@
+<%- include('header.ejs') %>
+<main class="dashboard-content">
+  <div class="container-fluid px-3 px-lg-4 py-4">
+    <div class="page-heading">
+      <div class="page-heading-copy">
+        <span class="page-icon"
+          ><i class="bi bi-file-earmark" aria-hidden="true"></i
+        ></span>
+        <div>
+          <p class="eyebrow mb-1">Starter</p>
+          <h1 class="h3 mb-1">Service Update</h1>
+          <p class="text-muted mb-0">
+            A clean starter page for new admin screens.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="panel">
+      <form action="/admin/service_edit_save/<%= data.sid %>" method="post">
+        <label>Title</label>
+        <input
+          type="text"
+          class="form-control mb-4"
+          name="stitle"
+          id=""
+          value="<%= data.stitle %>"
+        />
+        <label>Description</label>
+        <textarea class="form-control mb-4" name="sdesc" id="">
+ <%= data.sdesc %> </textarea
+        >
+        <input type="hidden" name="id" value="<%= data.sid %>" />
+        <button class="btn btn-primary">Update</button>
+      </form>
+    </section>
+  </div>
+</main>
+<%- include('footer.ejs') %>
