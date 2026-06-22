@@ -2,14 +2,11 @@
   "name": "dental",
   "version": "1.0.0",
   "description": "",
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "main": "app.js",
-  "devDependencies": {},
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "body-parser": "^2.3.0",
@@ -19,5 +16,16 @@
     "express-session": "^1.19.0",
     "mysql2": "^3.22.5",
     "nodemon": "^3.1.14"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnyaneshwarimehetre844-cmyk/dental_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnyaneshwarimehetre844-cmyk/dental_project/issues"
+  },
+  "homepage": "https://github.com/dnyaneshwarimehetre844-cmyk/dental_project#readme"
 }
