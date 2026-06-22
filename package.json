@@ -1,4 +1,16 @@
 {
+  "name": "dental",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon app.js"
+  },
   "dependencies": {
     "body-parser": "^2.3.0",
     "ejs": "^6.0.1",
